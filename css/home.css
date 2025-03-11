@@ -1,0 +1,122 @@
+.content {
+    margin-top: 15px;   
+    height: 86vh;
+    width: 95%;
+    margin-left: 35px;
+}
+.content-2 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    height: 80vh;
+}
+.status_feld {
+    flex: 1;    
+    background: white;
+    padding: 15px;    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-left: 20px;
+    margin-top: 20px;
+    align-items: center;   
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px;
+    border-bottom: 2px solid #ddd;
+}
+.title h2 {
+    font-size: 18px;
+    color: #333;
+}
+.new-students {
+    flex: 1;
+    background: white;
+    padding: 15px;    
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+.menu_bar {
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+}
+.menu_bar a {
+    display: flex;
+    align-items: center;
+    background: #07229b;
+    color: white;
+    padding: 14px;
+    margin: 5px 2px;
+    border-radius: 100px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s ease-in-out;
+}
+.menu_bar a:hover {
+    background: #051873;
+    transform: scale(1.05);
+}
+.menu_bar img {
+    width: 25px;
+    height: 25px;
+    margin-right: 12px;
+}
+
+.form-fields, 
+.main_form-fields {
+    display: block;    
+    gap: 9px;
+    padding: 7px;
+}
+.input-box{
+    display: block;
+}
+.main_form-fields{
+    padding-top: 6px;
+}
+.main_form-fields .input-box {
+    width: 48%;   
+}
+.form-fields .input-box{
+    width: 48%;
+}
+.info_fields_staff {
+    width: 100%;         
+}
+.info_fields_staff .input-box P{
+    margin: 5px;
+}
+.content label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    display: block;
+    margin-bottom: 0px;
+}
+
+.input-box p.form-display {
+    width: 100%;   
+    min-height: 28px;     
+    background: #f1f1f1;
+    color: #333;    
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    margin: 7px;
+    text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+    .title h2 {
+        font-size: 20px;
+    }
+
+    .menu_bar a {
+        font-size: 18px;
+        padding: 16px;
+    }
+}

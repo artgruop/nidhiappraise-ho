@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="shortcut icon" type="shortcuticon" href="image/logg.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+    <title>Chengannur Nidhi-Gold appraising</title>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="brandname">
+                <h2><img src="image/art_logot.png" alt="">CHENGANNUR NIDHI</h2> 
+            </div>
+            <div class="dropdown">           
+                <button class="dropbtn"><a href="home.html"><img src="image/home-button.png" alt="">Home</a></button>                    
+            </div>
+            <div class="right_info">
+                <div class="user_info">
+                    <label for="branchName">
+                        <img src="image/user (2).png" alt="User Icon">
+                    </label>                    
+                    <button class="logout">
+                        <p name="userName" id="userName"></p>
+                    </button>
+                    <div class="userdropdown-content">
+                        <a href="#"> <img src="image/user (2).png" alt="User Icon"> Profile</a>                        
+                        <a href="index.html"> <img src="image/switch copy.png" alt="User Icon"> Logout</a>
+                    </div>
+                </div>
+            </div>
+                </div>                    
+            </div>				
+        </div>
+    </div>
+    <br><br><br>
+    <div class="content">
+        <div class="content-2">
+            <div class="status_feld">
+            </div> 
+            <div class="new-students">                
+                <div class="menu_bar">                    
+                        <a href="home.html"> <img src="image/gold.png" alt="image.png">Gold Checking</a>
+                        <a href="report.html"> <img src="image/leave ico.png" alt="image.png">Report</a>
+                        <a href="sticker.html"> <img src="image/paper.png" alt="image.png"> Sticker</a>
+                        <a href="pofile.html"> <img src="image/his.png" alt="image.png">Work History</a>
+                        <a href="#"> <img src="image/settings.png" alt="image.png"> Settings</a>
+                        <a href="index.html"> <img src="image/switch copy.png" alt="image.png"> Logout</a>
+                </div>
+        </div>
+        </div>
+    </div>
+    <script type="module" src="js/home.js"></script>
+    <script>
+        (function () {
+    window.history.pushState(null, null, document.URL);
+    window.addEventListener("popstate", function () {
+        window.history.pushState(null, null, document.URL);
+    });
+    })();
+    </script>
+</body>
+</html>

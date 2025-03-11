@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="shortcut icon" type="shortcuticon" href="image/logg.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/pro.css">
+    <title>Chengannur Nidhi-Gold appraising</title>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="brandname">
+                <h2><img src="image/art_logot.png" alt="">CHENGANNUR NIDHI</h2> 
+            </div>
+            <div class="dropdown">           
+                <button class="dropbtn"><a href="home.html"><img src="image/home-button.png" alt="">Home</a></button>                    
+            </div>
+            <div class="right_info">
+                <div class="user_info">
+                    <label for="branchName">
+                        <img src="image/user (2).png" alt="User Icon">
+                    </label>                    
+                    <button class="logout">
+                        <p name="userName" id="userName"></p>
+                    </button>
+                    <div class="userdropdown-content">
+                        <a href="#"> <img src="image/user (2).png" alt="User Icon"> Profile</a>                        
+                        <a href="index.html"> <img src="image/switch copy.png" alt="User Icon"> Logout</a>
+                    </div>
+                </div>
+            </div>
+                </div>                    
+            </div>				
+        </div>
+    </div>
+    <br><br><br>
+    <div class="content">
+        <div class="content-2">
+            <div class="status_feld">
+                <div class="title">
+                        <h2>Work History</h2>
+                    </div>
+                    <div class="table-container">   
+                        <input type="hidden" name="user" value="Murugan" id="workuser">                 
+                    <table>
+                        <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Branch</th>
+                            <th>Appraised Packets</th>
+                        </tr>
+                    </thead>
+                        <tbody id="tableBody"></tbody>
+                    </table>
+                </div>             
+
+            </div> 
+            
+        </div>
+    </div>
+    <script type="module" src="js/pro.js"></script>
+    <script>
+        (function () {
+    window.history.pushState(null, null, document.URL);
+    window.addEventListener("popstate", function () {
+        window.history.pushState(null, null, document.URL);
+    });
+    })();
+    </script>
+</body>
+</html>

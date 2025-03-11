@@ -1,0 +1,221 @@
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+th, td {
+    text-align: center;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+th {
+    font-size: 13px;
+    background: #07229b;
+    color: white;
+}
+td {
+    font-size: 13px;
+}
+::placeholder {
+    text-transform: capitalize;
+    font-size: 11px;
+    color: rgba(0, 0, 0, 0.58);
+}
+.content {
+    position: relative;
+    margin-top: 9vh;
+    padding: 10px;
+    background: #cac9c9;
+}
+.content .content-2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+.content .content-2 .recent-payments {
+    flex: 1;
+    min-height: 80vh;
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+}
+.new-students {
+    flex: 2;
+    min-height: 80vh;
+    background: white;
+    margin: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+.new-students .title h2 {
+    position: sticky;
+    background: white;
+    padding: 5px;
+    z-index: 2;
+    text-align: center;
+}
+.new-students .usage{
+   margin-top: 6px;
+    display: flex;
+    gap: 2px;
+    width: 100%; 
+}
+.new-students .usage label{
+    font-size: 15px;
+    display: flex;
+    gap: 8px;
+    font-weight: 600;
+    align-items: center;
+}
+.new-students .usage p{
+    width: 40%;
+    min-height: 32px;
+    background: #07229b;
+    color: #ffffff;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 17px;
+    font-weight: 600;    
+}
+.new-students .usage .input-box{
+    width: 60%;
+}
+.table-container {
+    border-bottom: 2px #07229b solid;
+    overflow-y: auto;
+    max-height: 61vh;
+}
+.table-container table {
+    width: 100%;
+    border-collapse: collapse;
+}
+.table-container thead {
+    position: sticky;
+    top: 0;
+    background: white;
+    z-index: 0;
+}
+.table-container tbody tr:nth-child(even) {
+    background: #e8eaf7d7;
+}
+.table-container::-webkit-scrollbar {
+    width: 8px;
+}
+.table-container::-webkit-scrollbar-thumb {
+    background-color: #888;
+    border-radius: 4px;
+}
+.table-container::-webkit-scrollbar-thumb:hover {
+    background-color: #555;
+}
+.title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px;
+    border-bottom: 2px solid #999;
+}
+.title h2 {
+    font-size: 14px;
+}
+.form-fields {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 7px;
+}
+.stick_form-fields {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    padding-top: 25px;
+    gap: 10px;
+}
+.form-fields .input-box {
+    width: 48%;
+}
+.stick_form-fields .input-box {
+    display: flex;
+    align-items: center;    
+    gap:10px;
+}
+.form-fields .input-box input,
+.stick_form-fields .input-box input {
+    width: 63%;
+    padding: 6px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    background: white;
+    color: #333;
+}
+.form-fields label,
+.stick_form-fields label {
+    font-size: 12px;
+    font-weight: bold;
+    color: #333;
+}
+.input-box p.form-display {
+    width: 100%;
+    background: #f1f1f1;
+    color: #333;
+    border: 1px solid #ccc;
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+.btn-save-data {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 150px;
+    gap: 260px;
+}
+.btn-save-data button {    
+    color: white;
+    border-radius: 2px;
+    border: none;
+    font-size: 15px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.btn-save-data .save {
+    padding: 9px 18px;
+    background-color: #0879ad;
+}
+.btn-save-data .clear {
+    padding: 4px 9px;
+    background-color: #800303;
+}
+.btn-save-data .save:hover {
+    transform: scale(1.1)
+}
+.btn-save-data .clear:hover {
+    transform: scale(1.1)
+}
+@media screen and (max-width: 768px) {
+    .form-fields {
+        flex-direction: column;
+    }
+    .input-box {
+        width: 100%;
+    }
+    .btn-save-data {
+        flex-direction: column;
+        align-items: center;
+    }
+    .btn-save-data .save,
+    .btn-save-data .clear {
+        width: 80%;
+        text-align: center;
+    }
+}

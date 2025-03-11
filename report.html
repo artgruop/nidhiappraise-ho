@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="shortcut icon" type="shortcuticon" href="image/logg.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/report.css">
+    <title>Chengannur Nidhi-Gold appraising</title>
+</head> 
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="brandname">
+                <h2><img src="image/art_logot.png" alt="">CHENGANNUR NIDHI</h2> 
+            </div>
+            <div class="dropdown">           
+                <div class="dropdown">           
+                    <button class="dropbtn"><a href="home.html"><img src="image/home-button.png" alt="">Home</a></button>                    
+                </div>
+            </div>
+            <div class="right_info">
+                <div class="user_info">
+                    <label for="branchName">
+                        <img src="image/user (2).png" alt="User Icon">
+                    </label>                    
+                    <button class="logout">
+                        <p name="userName" id="userName"></p>
+                    </button>
+                    <div class="userdropdown-content">
+                        <a href="#"> <img src="image/user (2).png" alt="User Icon"> Profile</a>
+                        <a href="index.html"> <img src="image/switch copy.png" alt="User Icon"> Logout</a>
+                    </div>
+                </div>
+            </div>
+                </div>                    
+            </div>				
+        </div>
+    </div>
+<br><br>
+    <div class="content">
+        <div class="content_rept">
+            <div class="title">
+                <h2>Gold Appraised Report</h2>
+            </div>
+            <div class="filter_feld">
+                <div class="input-box">
+                    <label for="branch">Branch</label>
+                    <select id="branch" required></select>
+                </div>
+                <div class="input-box">
+                    <label for="date">Date</label>
+                    <input type="date" id="date" required>
+                </div>
+                <div class="input-box">
+                    <label for="Appraiser">AppraisedBy</label>
+                    <select  id="Appraiser" required></select>
+                </div>
+                <div class="btn-display">
+                    <button type="submit" class="display">Display</button>
+                </div>
+            
+    
+                <div class="btn-functions">
+                    <button onclick="exportTable()">Export</button>
+                    <button onclick="printTable()">Print</button>
+                </div>
+        </div>
+    
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            
+                            <th>Pledge Number</th>
+                            <th>Gold Weight</th>
+                            <th>Stone/Plastic Weight</th>
+                            <th>Net Weight</th>
+                            <th>Loan Amount</th>
+                            <th>Remarks</th>
+                            <th class="no-print">Date & Time</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <tr><td colspan="8">No Records Found</td></tr>
+                    </tbody>
+                </table>   
+                <!-- Hidden Inputs for brinfo -->
+                            <input type="hidden" id="hiddenBranchManager">
+                            <input type="hidden" id="hiddenStaff1">
+                            <input type="hidden" id="hiddenStaff2">
+                            <input type="hidden" id="hiddenUserName">
+             
+            </div>
+            <p id="rowCount"></p>
+        </div>
+    </div>
+<script type="module" src="js/report.js"></script>
+<script  src="js/printing.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
+<script>
+    (function () {
+window.history.pushState(null, null, document.URL);
+window.addEventListener("popstate", function () {
+    window.history.pushState(null, null, document.URL);
+});
+})();
+</script>
+
+</body>
+</html>

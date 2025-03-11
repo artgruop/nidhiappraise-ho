@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <link rel="shortcut icon" type="shortcuticon" href="image/logg.png">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/stick.css">
+    <title>Chengannur Nidhi-Gold appraising</title>
+</head>
+<body>
+    <div class="header">
+        <div class="nav">
+            <div class="brandname">
+                <h2><img src="image/art_logot.png" alt="">CHENGANNUR NIDHI</h2> 
+            </div>
+            <div class="dropdown">           
+                <div class="dropdown">           
+                    <button class="dropbtn"><a href="home.html"><img src="image/home-button.png" alt="">Home</a></button>                    
+                </div>
+            </div>
+            <div class="right_info">
+                <div class="user_info">
+                    <label for="branchName">
+                        <img src="image/user (2).png" alt="User Icon">
+                    </label>                    
+                    <button class="logout">
+                        <p name="userName" id="userName"></p>
+                        <input type="hidden" name="hiddenuserName" id="hiddenuserName">
+                    </button>
+                    <div class="userdropdown-content">
+                        <a href="#"> <img src="image/user (2).png" alt="User Icon"> Profile</a>
+                        <a href="index.html"> <img src="image/switch copy.png" alt="User Icon"> Logout</a>
+                    </div>
+                </div>
+            </div>
+                </div>                    
+            </div>				
+        </div>
+    </div>
+        <div class="content">
+            <div class="content-2">
+                <div class="recent-payments">
+                    <div class="title">
+                        <h2>Sticker</h2> 
+                        <div id="messageContainer"></div>     
+                    </div>
+                    <div class="stic_fields">
+                        <div class="form-fields">                        
+                            <div class="input-box">
+                                <input type="hidden" id="id" />
+                                <label for="date">Date</label>
+                                <input type="date" name="mainDate" id="hiddenmainDate"  required/>
+                            </div>
+                            <div class="input-box">
+                                <label for="brName">Branch</label>
+                                <input type="text" name="branch" value="HeadOffice" id="hiddenbranch" required />
+                            </div> 
+                        </div>
+                    </div>
+                    <div class="wrapper" id="data_form">
+                        <form action="#" id="stickerForm">                          
+                            <div class="stick_form-fields">
+                                <div class="input-box">                                           
+                                   <label for="used">Issued Sticker&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                    <input type="number" placeholder="used sticker" id="hostic" required autocomplete="off">
+                                </div>
+                                <!--
+                                <div class="input-box">
+                                    <label for="damaged">Damaged Sticker</label>
+                                    <input type="number" placeholder="Damaged sticker" id="damaged"  autocomplete="off">
+                                </div>
+                                <div class="input-box">
+                                    <label for="total">Total&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</label>
+                                    <input type="number" id="totlsick" readonly>
+                                </div> 
+                            -->
+                            <div class="btn-save-data">                                
+                                <button type="reset" class="clear">Clear</button>
+                                <button type="submit" class="save">Save</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                </div>
+                <div class="new-students">
+                    <div class="title">
+                        <h2>Sticker Used Report</h2>
+                    </div>
+                    <div class="table-container">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Date</th>
+                                    <th>Branch</th>
+                                    <th>Used</th>
+                                    <th>Damaged</th>
+                                    <th>Total Used</th>
+                                    <th>Issued Sticker</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tableBody"></tbody>
+                        </table>
+                    </div>
+                    <div class="usage">
+                        <div class="input-box">
+                    <label for="totlused">Total Used
+                    <p id="totalSticker"></p></label>
+                </div>
+                <div class="input-box">
+                    <label for="totlused">Received
+                    <p id="totalReceived"></p></label>
+                </div>            
+                <div class="input-box">
+                    <label for="balnce">Balance
+                    <p id="balance"></p></label>
+                </div>
+                </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+<script type="module" src="js/stic.js"></script>
+<script>
+    (function () {
+window.history.pushState(null, null, document.URL);
+window.addEventListener("popstate", function () {
+    window.history.pushState(null, null, document.URL);
+});
+})();
+</script>
+</body>
+</html>
