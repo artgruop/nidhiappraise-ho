@@ -7,7 +7,13 @@ function formatDate(dateString) {
     const month = String(date.getMonth() + 1).padStart(2, '0'); 
     const year = date.getFullYear();
     return `${day}/${month}/${year}`;
-}
+  }
+  function formatTime(dateString) {
+    if (!dateString) return "Unknown Time";
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString; 
+    return date.toLocaleTimeString();
+  }
 
 //branch name
 document.addEventListener("DOMContentLoaded", () => {
@@ -61,40 +67,53 @@ import { database, ref, push, onValue } from "./firebaseConfig.js";
       });  
   });  
   // Fetch Data 
-  onValue(collectionListDB, function (snapshot) {
+ onValue(collectionListDB, function (snapshot) {
     if (snapshot.exists()) {
         let userArray = Object.entries(snapshot.val());
-        tblBodyEl.innerHTML = "";
+        tblBodyEl.innerHTML = ""; // ✅ Clear previous table content
 
         let totalSick = 0;
         let totalReceived = 0;
 
         userArray.forEach(([id, currentUserValue]) => {
-            let formattedDate = formatDate(currentUserValue.hiddenmainDate);
-            let totlsickValue = parseInt(currentUserValue.totlsick) || 0;
-            let recevdValue = parseInt(currentUserValue.received) || 0;
+            let totlsickValue = Number(currentUserValue.totlsick) || 0; // ✅ Handle undefined safely
+            let recevdValue = Number(currentUserValue.recevd) || 0;
+
+            let formattedDate = "-";
+            let formattedTime = "-";
+
+            // ✅ Correct Date Formatting
+            if (currentUserValue.dateTime) {
+                const dateObj = new Date(currentUserValue.dateTime);
+                if (!isNaN(dateObj.getTime())) {
+                    formattedDate = formatDate(dateObj);
+                    formattedTime = formatTime(dateObj);
+                }
+            }
 
             totalSick += totlsickValue;
             totalReceived += recevdValue;
 
+            // ✅ Correct table row & closing <td> issue
             tblBodyEl.innerHTML += `
                 <tr>
-                    <td>${formattedDate || "-"}</td> 
+                    <td>${currentUserValue.hiddenmainDate || "-"}</td> 
                     <td>${currentUserValue.hiddenbranch || "-"}</td> 
                     <td>${currentUserValue.usedstic || "-"}</td>
                     <td>${currentUserValue.damaged || "-"}</td>
                     <td>${totlsickValue}</td>
                     <td>${recevdValue}</td>
+                    <td class="no-print">${formattedDate} ${formattedTime}</td> 
                 </tr>
             `;
         });
-        // Update totals
-        totalStickerEl.textContent = `${totalSick}`;
-        totalReceivedEl.textContent = `${totalReceived}`;        
 
-        updateBalance();
+        // ✅ Update totals safely
+        if (totalStickerEl) totalStickerEl.textContent = `${totalSick}`;
+        if (totalReceivedEl) totalReceivedEl.textContent = `${totalReceived}`;
+
+        updateBalance(); // ✅ Ensure this function exists before calling it
     } else {
-        tblBodyEl.innerHTML = "<tr><td colspan='6'>No Records Found</td></tr>";
-        
+        tblBodyEl.innerHTML = "<tr><td colspan='7'>No Records Found</td></tr>"; // ✅ Fix column count
     }
 });
