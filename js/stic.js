@@ -78,7 +78,7 @@ import { database, ref, push, onValue } from "./firebaseConfig.js";
         userArray.forEach(([id, currentUserValue]) => {
             let formattedDatemain = formatDate(currentUserValue.hiddenmainDate);
             let totlsickValue = Number(currentUserValue.totlsick) || 0; // ✅ Handle undefined safely
-            let recevdValue = Number(currentUserValue.recevd) || 0;
+            let recevdValue = Number(currentUserValue.received) || 0;
 
             let formattedDate = "-";
             let formattedTime = "-";
