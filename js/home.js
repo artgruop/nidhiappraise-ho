@@ -55,6 +55,6 @@ function formatDate(dateString) {
         
       } else {
         // Redirect back to login if no branch name found
-        window.location.href = 'index.html';
+        window.location.href = './';
       }
     });
