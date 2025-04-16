@@ -49,6 +49,7 @@ function exportTable() {
 function printTable() {
     const branchValue = document.querySelector("#branch").value.trim(); 
     const dateValue = document.querySelector("#date").value.trim();
+    const rowCount = document.querySelector("#rowCount_in").value;
     if (!branchValue || !dateValue) {
         alert("⚠️ Please select a branch and date before printing.");
         return;
@@ -67,6 +68,7 @@ function printTable() {
         <p>Date:<span> ${formattedDate}</span></p>
         <p>Branch:<span>${branchValue}</span></p>
         <p>AppraisedBy:<span>${userName}</span></p>
+         <p>Total Appraised:<span> ${rowCount}</span></p>
     </div> 
     <div class="maindata">
         ${printContent} 
@@ -98,7 +100,7 @@ function printTable() {
             width: 100%;
             display: block;
             justify-content: space-between;
-            padding: 9px ;
+            padding: 8px;
         }    
         .info-table p{
             font-size: 15px;
