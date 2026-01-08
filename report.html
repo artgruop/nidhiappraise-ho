@@ -96,6 +96,45 @@
             <p id="rowCount"></p>
             <input type="hidden" id="rowCount_in">
         </div>
+         <!---- Popup -->
+        <div id="correctionPopup" class="popup">
+            <div class="popup-content">
+                <form id="correctionForm">
+                    <div class="inputsBox">
+                        <div class="input-box">
+                            <label for="glnum">Pledge Number</label>
+                            <input type="text" id="glnum">
+                        </div>
+                        <div class="input-box">
+                            <label for="glwgt">Gold Weight</label>
+                            <input type="text" id="glwgt">
+                        </div>
+                        <div class="input-box">
+                            <label for="stnwgt">Stone/Plastic Weight</label>
+                            <input type="text" id="stnwgt">
+                        </div>
+                        <div class="input-box">
+                            <label for="netwgt">Net Weight</label>
+                            <input type="text" id="netwgt">
+                        </div>
+                        <div class="input-box">
+                            <label for="lonamt">Loan Amount</label>
+                            <input type="text" id="lonamt">
+                        </div>
+                        <div class="input-box">
+                            <label for="remark">Remarks</label>
+                            <input type="text" id="remark">
+                        </div>
+                    </div>
+                    <div class="btns">
+                        <button type="submit" class="update">Update</button>
+                        <button type="submit" class="delete">Delete</button>
+                        <button type="reset" class="cancel">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <!------------->
     </div>
 <script type="module" src="js/report.js"></script>
 <script  src="js/printing.js"></script>
