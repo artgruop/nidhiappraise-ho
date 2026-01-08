@@ -1,28 +1,28 @@
 //  date & time
 function formatDate(dateString) {
-  if (!dateString) return "Unknown Date";
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return dateString;
-  const day = String(date.getDate()).padStart(2, '0');
-  const month = String(date.getMonth() + 1).padStart(2, '0'); 
-  const year = date.getFullYear();
-  return `${day}/${month}/${year}`;
+    if (!dateString) return "Unknown Date";
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
+    const day = String(date.getDate()).padStart(2, '0');
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const year = date.getFullYear();
+    return `${day}/${month}/${year}`;
 }
 function formatTime(dateString) {
-  if (!dateString) return "Unknown Time";
-  const date = new Date(dateString);
-  if (isNaN(date.getTime())) return dateString; 
-  return date.toLocaleTimeString();
+    if (!dateString) return "Unknown Time";
+    const date = new Date(dateString);
+    if (isNaN(date.getTime())) return dateString;
+    return date.toLocaleTimeString();
 }
 //user name
-document.addEventListener("DOMContentLoaded", () => {     
-      const branchName = localStorage.getItem('userName');    
-      if (branchName) {
+document.addEventListener("DOMContentLoaded", () => {
+    const branchName = localStorage.getItem('userName');
+    if (branchName) {
         document.getElementById('userName').textContent = branchName;
-        document.getElementById('hiddenUserName').value = branchName;        
-      } else {        
+        document.getElementById('hiddenUserName').value = branchName;
+    } else {
         window.location.href = './';
-      }
+    }
 });
 //branch droplist
 document.addEventListener("DOMContentLoaded", function () {
@@ -41,14 +41,14 @@ document.addEventListener("DOMContentLoaded", function () {
                 const option = document.createElement("option");
                 option.value = branch;
                 option.textContent = branch;
-                branchSelect.appendChild(option);            
+                branchSelect.appendChild(option);
             });
             appraisSelect.innerHTML = `<option value="" disabled selected></option>`;
             data.Appraiser.forEach(appraiser => {
                 const option = document.createElement("option");
                 option.value = appraiser;
                 option.textContent = appraiser;
-                appraisSelect.appendChild(option); 
+                appraisSelect.appendChild(option);
             });
         })
         .catch(error => console.error("Error loading data:", error));
@@ -76,22 +76,22 @@ function fetchData() {
         return;
     }
     const formattedDate2 = formatDate(dateValue).replace(/\//g, '-');
-    const goldVerifyDB = ref(database, `goldvrfy/${apprasValue}/${branchValue}/${formattedDate2}`);    
-        onValue(goldVerifyDB, (goldSnapshot) => {
-            if (goldSnapshot.exists()) {
-                let userArray = Object.entries(goldSnapshot.val());
-                tblBodyEl.innerHTML = "";
-                userArray.forEach(([id, currentUserValue], index) => {
-                    let formattedDate = "-";
-                    let formattedTime = "-";
-                    if (currentUserValue.dateTime) {
-                        const dateObj = new Date(currentUserValue.dateTime);
-                        if (!isNaN(dateObj.getTime())) {
-                            formattedDate = formatDate(dateObj);
-                            formattedTime = formatTime(dateObj);
-                        }
+    const goldVerifyDB = ref(database, `goldvrfy/${apprasValue}/${branchValue}/${formattedDate2}`);
+    onValue(goldVerifyDB, (goldSnapshot) => {
+        if (goldSnapshot.exists()) {
+            let userArray = Object.entries(goldSnapshot.val());
+            tblBodyEl.innerHTML = "";
+            userArray.forEach(([id, currentUserValue], index) => {
+                let formattedDate = "-";
+                let formattedTime = "-";
+                if (currentUserValue.dateTime) {
+                    const dateObj = new Date(currentUserValue.dateTime);
+                    if (!isNaN(dateObj.getTime())) {
+                        formattedDate = formatDate(dateObj);
+                        formattedTime = formatTime(dateObj);
                     }
-                    tblBodyEl.innerHTML += `
+                }
+                tblBodyEl.innerHTML += `
                         <tr>   
                             <td>${currentUserValue.Pledge || "-"}</td> 
                             <td>${currentUserValue.glwgt || "-"}</td> 
@@ -100,19 +100,21 @@ function fetchData() {
                             <td>${currentUserValue.lonamt || "-"}</td>
                             <td>${currentUserValue.remark || "-"}</td>
                             <td class="no-print">${formattedDate} ${formattedTime}</td>
-                            <td class="no-print"><button class="correctionBtn" type="button" data-id="${id}">Correct</button></td>  <!-- Add class --> 
+                            <td class="no-print"><button class="correctionBtn" type="button" data-id="${id}">Correct</button></td>     <!-- Add class --> 
                         </tr>
                     `;
-                });
-                rowCountEl.textContent = `Total: ${userArray.length}`;
-                rowCount_1nEl.value = `${userArray.length}`;
-            } else {
-                tblBodyEl.innerHTML = "<tr><td colspan='8'>⚠️ No Records Found</td></tr>";
-                rowCountEl.textContent = "Total: 0";
-            }
-        });
-  
+            });
+            rowCountEl.textContent = `Total: ${userArray.length}`;
+            rowCount_1nEl.value = `${userArray.length}`;
+        } else {
+            tblBodyEl.innerHTML = "<tr><td colspan='8'>⚠️ No Records Found</td></tr>";
+            rowCountEl.textContent = "Total: 0";
+        }
+    });
+
 }
+
+
 // --- Update & Delete Logic ---
 
 const correctionPopup = document.getElementById("correctionPopup");
@@ -231,4 +233,3 @@ if (displayBtn) {
 } else {
     console.error("Display button not found! Ensure it exists in the HTML.");
 }
-
