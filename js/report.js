@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const branchName = localStorage.getItem('userName');    
       if (branchName) {
         document.getElementById('userName').textContent = branchName;
-        document.getElementById('hiddenuserName').value = branchName;        
+        document.getElementById('hiddenUserName').value = branchName;        
       } else {        
         window.location.href = './';
       }
@@ -54,7 +54,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .catch(error => console.error("Error loading data:", error));
 });
 //Data get fom db
-import { database, ref, push, onValue } from "./firebaseConfig.js";
+import { database, ref, push, onValue, update, remove } from "./firebaseConfig.js";
 
 const branchEL = document.querySelector("#branch");
 const dateEL = document.querySelector("#date");
