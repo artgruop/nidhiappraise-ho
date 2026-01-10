@@ -100,7 +100,7 @@ function fetchData() {
                             <td>${currentUserValue.lonamt || "-"}</td>
                             <td>${currentUserValue.remark || "-"}</td>
                             <td class="no-print">${formattedDate} ${formattedTime}</td>
-                            <td class="no-print"><button class="correctionBtn" type="button" data-id="${id}">Correct</button></td>     <!-- Add class --> 
+                            <td class="no-print"><button class="correctionBtn" type="button" data-id="${id}">✏️</button></td>     <!-- Add class --> 
                         </tr>
                     `;
             });
